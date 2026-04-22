@@ -8,3 +8,4 @@ prisma/dev.db
 public/uploads
 log.txt
 *.tsbuildinfo
+src/generated
