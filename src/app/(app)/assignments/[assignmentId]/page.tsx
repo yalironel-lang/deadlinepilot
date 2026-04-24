@@ -215,7 +215,7 @@ export default function AssignmentDetailPage() {
 
   const riskScore = computeRiskScore({ ...assignment, tasks: assignment.tasks });
   const tier = getRiskTier(riskScore, assignment.status);
-  const doneCount = assignment.tasks.filter((t) => t.status === "done").length;
+  const doneCount = assignment.tasks.filter((t: any) => t.status === "done").length;
   const totalTasks = assignment.tasks.length;
   const nextAction = computeNextAction(assignment);
   const dueDateObj = new Date(assignment.dueDate);
