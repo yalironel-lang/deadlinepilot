@@ -56,7 +56,7 @@ type NextAction =
 
 function computeNextAction(assignment: AssignmentFull): NextAction {
   if (assignment.status === "done") return { kind: "completed" };
-  const pending = assignment.tasks.filter((t) => t.status !== "done");
+  const pending = assignment.tasks.filter((t: any) => t.status !== "done");
   if (assignment.tasks.length > 0 && pending.length === 0) return { kind: "mark_done" };
   if (pending.length > 0) return { kind: "task", task: pending[0] };
   return { kind: "start" };
