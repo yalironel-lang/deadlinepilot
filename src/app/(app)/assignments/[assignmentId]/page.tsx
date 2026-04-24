@@ -184,7 +184,7 @@ export default function AssignmentDetailPage() {
       });
       if (res.ok) {
         const updated = await res.json();
-        setAssignment((prev) => (prev ? { ...prev, ...updated } : null));
+        setAssignment((prev: any) => (prev ? { ...prev, ...updated } : null));
         setStatusField(newStatus);
         if (newStatus === "done") showToast("Assignment marked complete.", "success");
         else if (newStatus === "in_progress") showToast("Assignment started.", "success");
