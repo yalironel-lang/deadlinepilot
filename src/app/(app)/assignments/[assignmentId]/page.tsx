@@ -162,7 +162,7 @@ export default function AssignmentDetailPage() {
       });
       if (res.ok) {
         const updated = await res.json();
-        setAssignment((prev) => (prev ? { ...prev, ...updated } : null));
+        setAssignment((prev: any) => (prev ? { ...prev, ...updated } : null));
         setEditMode(false);
         showToast("Details saved.", "success");
       } else {
